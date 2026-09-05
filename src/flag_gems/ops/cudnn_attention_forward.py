@@ -86,8 +86,7 @@ def cudnn_attention_forward(
             dtype=torch.float32,
         )
 
-    # cuDNN convention: logsumexp shape is [B, H, S_q, 1]
-    lse = lse.unsqueeze(-1)
+    # cuDNN convention: logsumexp shape is [B, H, S_q] (3-D, no trailing dim)
 
     # Philox seed / offset: the Triton kernel does not produce these
     # (dropout is not supported), so return scalar zero tensors.
