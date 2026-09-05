@@ -18,7 +18,7 @@ class NormBenchmark(base.GenericBenchmark):
 
 
 @pytest.mark.batch_norm_impl_index
-def test__batch_norm_impl_index():
+def test_batch_norm_impl_index():
     def batch_norm_impl_index_input_fn(shape, dtype, device):
         C = shape[1]
         inp = torch.randn(shape, dtype=dtype, device=device)

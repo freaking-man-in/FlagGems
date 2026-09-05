@@ -19,7 +19,7 @@ from . import accuracy_utils as utils
 )
 @pytest.mark.parametrize("dtype", utils.FLOAT_DTYPES)
 @pytest.mark.parametrize("affine", [True, False])
-def test__batch_norm_impl_index(shape, dtype, affine):
+def test_batch_norm_impl_index(shape, dtype, affine):
     if flag_gems.vendor_name == "cambricon":
         torch.manual_seed(23)
         torch.mlu.manual_seed_all(23)
